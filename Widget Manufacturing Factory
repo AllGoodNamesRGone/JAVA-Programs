@@ -1,0 +1,50 @@
+/**
+ * Design a class for a widget manufacturing plant.
+ * Assuming that 10 widgets may be produced each hour,
+ * the class object will calculate how many days it will take to produce any number of widgets.
+ * (The plant operates two shifts of eight hours per day.)
+ * Write a program that asks the user 
+ * for the number of widgets that have been ordered and then displays the number of days it will take to produce them.
+ * Input Validation:
+ * Do not accept negative values for the number of widgets ordered.
+ */
+import java.util.Scanner;
+/**
+ * Factory
+ */
+class Factory
+{
+    float days=0.0f,hrs=0.0f;
+    /**
+     * @return the days
+     */
+    public float getDays(int w) {
+        hrs=(float)(w/10)/16;//10 widgets in 1 hr and 16hrs in one day
+        return hrs;
+    }
+}    
+/**
+ * MainClass
+ */
+public class MainClass
+{
+    public static void main(String[] args)
+    {
+        int widget,d1;
+        float h,d2;
+        Factory obj=new Factory();
+        Scanner in=new Scanner(System.in);
+        System.out.println("Enter the no. of widgets");
+        widget=in.nextInt();
+        if(widget>0)
+        {
+            h=obj.getDays(widget);
+            d1=(int)h;
+            d2=h-d1;
+            System.out.println("The time required for the widgets is: "+d1+" days and "+d2*16+" hours.");
+        }
+            
+        else
+            System.out.println("Wrong input!");
+    }
+}
