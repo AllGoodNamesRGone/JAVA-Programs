@@ -1,0 +1,65 @@
+/**
+ * 1. Write a Circle class that has the following member variables:
+ * • radius: a double • pi: a double initialized with the value 3.14159
+ * The class should have the following member functions:
+ * • Constructor. Accepts the radius of the circle as an argument. • setRadius.
+ * A mutator function for the radius variable. • getRadius.
+ * An accessor function for the radius variable. • getArea.
+ * Returns the area of the circle,• getDiameter. Returns the diameter of the circle,
+ * •getCircumference. Returns the circumference of the circle
+ * Write a program that demonstrates the Circle class by asking the user
+ * for the circle’s radius, creating a Circle object,
+ * and then reporting the circle’s area, diameter, and circumference using const method. 
+ */
+import java.util.Scanner;
+class Circle
+{
+    double cir,rad,pi=3.14159;
+    Circle(double r)
+    {
+        rad=r;
+    }
+    /**
+     * @return the area
+     */
+    public double getArea() {
+        return(pi*rad*rad);
+    }
+    /**
+     * @return the rad
+     */
+    public double getRad() {
+        return rad;
+    }
+    /**
+     * @return the dia
+     */
+    public double getDia() {
+        return(2*rad);
+    }
+    /**
+     * @return the cir
+     */
+    public double getCir() {
+        cir=2*pi*rad;
+        return cir;
+    }
+}
+/**
+ * Q1
+ */
+public class Q1 
+{
+    public static void main(String[] args)
+    {
+        double r;
+        Scanner in=new Scanner(System.in);
+        System.out.println("Enter the radius of circle");
+        r=in.nextDouble();
+        Circle obj = new Circle(r);
+        System.out.println("The radius you entered is = "+obj.getRad());
+        System.out.println("The Diameter of circle is = "+obj.getDia());
+        System.out.println("The Circumference of circle is = "+obj.getCir());
+        System.out.println("The area of circle is = "+obj.getArea());
+    }
+}
