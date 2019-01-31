@@ -1,0 +1,110 @@
+/**
+ * Design an Inventory class that can hold information and calculate data for items in a retail store’s inventory.
+ * The class should have the following private member variables: Variable Name  Description itemNumber  An int that holds the item’s item number. quantity   An int for holding the quantity of the items on hand.
+ * cost A double for holding the wholesale per-unit cost of the item totalCost   A double for holding the total inventory cost of the item (calculated as quantity times cost).
+ * The class should have the following public member functions: Member   Function Description Constructor
+ * The function should copy these values to the appropriate member variables and then call the setTotalCost function. setItemNumber  Accepts an integer argument that is copied to the itemNumber member variable. setQuantity  Accepts an integer argument that is copied to the quantity member variable.
+ * setCost  Accepts a double argument that is copied to the cost member variable. 
+ * setTotalCost  Calculates the total inventory cost for the item (quantity times cost) and stores the result in totalCost.
+ * getItemNumber  Returns the value in itemNumber. getQuantity   Returns the value in quantity. getCost   Returns the value in cost. getTotalCost   Returns the value in totalCost.
+ * Do not accept negative values for item number, quantity, or cost. 
+ */
+import java.util.*;
+/**
+ *Inventory
+ */
+class Inventory 
+{
+    int itemnumber,quantity;
+    double cost,totalcost=0.0;
+    Inventory()
+    {
+        itemnumber=0;
+        quantity=0;
+        cost=0.0;
+    } 
+    /**
+     * @param cost the cost to set
+     */
+    public void setCost(double cost) {
+        if(!(cost<0))
+            this.cost = cost;
+        else
+            System.out.println("Wrong input!");
+    }
+    /**
+     * @param itemnumber the itemnumber to set
+     */
+    public void setItemnumber(int itemnumber) {
+        if(!(itemnumber<0))
+            this.itemnumber = itemnumber;
+        else
+            System.out.println("Wrong input!");
+    }
+    /**
+     * @param quantity the quantity to set
+     */
+    public void setQuantity(int quantity) {
+        if(!(quantity<0))
+            this.quantity = quantity;
+        else
+            System.out.println("Wrong input!");
+    }
+    /**
+     *the totalcost to set
+     */
+    public void setTotalcost() {
+        totalcost=cost*itemnumber;
+    }
+    /**
+     * @return the cost
+     */
+    public double getCost() {
+        return cost;
+    }
+    /**
+     * @return the itemnumber
+     */
+    public int getItemnumber() {
+        return itemnumber;
+    }
+    /**
+     * @return the quantity
+     */
+    public int getQuantity() {
+        return quantity;
+    }
+    /**
+     * @return the totalcost
+     */
+    public double getTotalcost() {
+        return totalcost;
+    }
+}
+/**
+ * MainClass
+ */
+public class MainClass
+{
+    public static void main(String[] args)
+    {
+        int quantity,itemnumber;
+        double cost;
+        Scanner in=new Scanner(System.in);
+        Inventory obj=new Inventory();
+        System.out.println("Enter the quantity");    
+        quantity=in.nextInt();
+        obj.setQuantity(quantity);
+        System.out.println("Enter the item no.");
+        itemnumber=in.nextInt();
+        obj.setItemnumber(itemnumber);
+        System.out.println("Enter the Cost");
+        cost=in.nextDouble();
+        obj.setCost(cost);
+        obj.setTotalcost();
+        System.out.println("The Quantity in hand is: "+obj.getQuantity());
+        System.out.println("The item no is: "+obj.getItemnumber());
+        System.out.println("The cost of the item is: "+obj.getCost());
+        System.out.println("The Total cost of the items is: "+obj.getTotalcost());
+    }
+}
