@@ -1,15 +1,11 @@
 /**
- * 1. Write a Circle class that has the following member variables:
- * • radius: a double • pi: a double initialized with the value 3.14159
- * The class should have the following member functions:
- * • Constructor. Accepts the radius of the circle as an argument. • setRadius.
+ * Write a Circle class that has the following member variables: • radius: a double • pi: a double initialized with the value 3.14159
+ * The class should have the following member functions: • Constructor.
+ * Accepts the radius of the circle as an argument. • setRadius.
  * A mutator function for the radius variable. • getRadius.
- * An accessor function for the radius variable. • getArea.
- * Returns the area of the circle,• getDiameter. Returns the diameter of the circle,
- * •getCircumference. Returns the circumference of the circle
- * Write a program that demonstrates the Circle class by asking the user
- * for the circle’s radius, creating a Circle object,
- * and then reporting the circle’s area, diameter, and circumference using const method. 
+ * An accessor function for the radius variable. • getArea. Returns the area of the circle, which is calculated as  area = pi * radius * radius • getDiameter. Returns the diameter of the circle, which is calculated as diameter = radius * 2 • getCircumference. Returns the circumference of the circle, which is calculated as circumference = 2 * pi * radius
+ * Write a program that demonstrates the Circle class by asking the user for the circle’s radius, creating a Circle object, and then reporting the circle’s area, diameter, and circumference using const method.
+ * A const method is declared as (return type methodname() const).
  */
 import java.util.Scanner;
 class Circle
