@@ -1,0 +1,66 @@
+/**
+ * In a population, the birth rate and death rate are calculated
+as follows:
+Birth Rate = Number of Births ÷ Population
+Death Rate = Number of Deaths ÷ Population
+For example, in a population of 100,000 that has 8,000 births and
+6,000 deaths per year, the birth rate and death rate are:
+Birth Rate = 8,000 ÷ 100,000 = 0.08
+Death Rate = 6,000 ÷ 100,000 = 0.06
+Design a Population class that stores a population, number of
+births, and number of deaths for a period of time. Member 
+functions should return the birth rate and death rate.Implement
+the class in a program. Do not accept population figures less
+than 1, or birth or death numbers less than 0
+ */
+import java.util.Scanner;
+class Population
+{
+    int pop,nbirths,ndeaths;
+    float brate,drate;
+    boolean setVal()
+    {
+        int i;
+        Scanner in=new Scanner(System.in);
+        System.out.println("Enter the population");
+        pop=in.nextInt();
+        System.out.println("Enter the no. of births");
+        nbirths=in.nextInt();
+        System.out.println("Enter the no. of deaths");
+        ndeaths=in.nextInt();
+        if(!(pop>=1&&nbirths>=0&&ndeaths>=0))
+        {
+            System.out.println("Wrong input!");
+            return false;
+        }    
+        else
+            return true;
+    }
+    /**
+     * @return the brate
+     */
+    public float getBrate() {
+       brate=(float)nbirths/pop;
+        return brate;
+    }
+    /**
+     * @return the drate
+     */
+    public float getDrate() {
+       drate=(float)ndeaths/pop;
+        return drate;
+    }
+}
+public class Q3 {
+
+    public static void main(String[] args)
+    {
+        Population obj=new Population();
+        System.out.println("Enter the values");
+        if(obj.setVal())
+        {
+            System.out.println("The Birth Rate is "+obj.getBrate());
+            System.out.println("The Death rate is "+obj.getDrate());
+        }
+    }
+}
