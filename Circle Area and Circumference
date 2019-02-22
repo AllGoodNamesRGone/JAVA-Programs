@@ -42,9 +42,9 @@ class Circle
     }
 }
 /**
- * Q1
+ * CircleArea
  */
-public class Q1 
+public class CircleArea
 {
     public static void main(String[] args)
     {
