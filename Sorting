@@ -1,0 +1,42 @@
+/**
+ * Program that sorts 2 integer arrays .
+ * arr is the hardcoded array and is sorted with built-in method of class Array.
+ * arr2 is the user input array and is sorted manually.
+ * Author: GeekString(Piyush Gaur).
+ */
+import java.util.*;
+/**
+ * Sort
+ */
+public class Sort {
+    public static void main(String[] args) {     
+        int arr[]={2,1,5,8,6,4},i,j,tmp;
+        int[] arr2=new int[5];
+        System.out.println("The Array is: ");
+        for(i=0;i<6;++i)
+            System.out.print(arr[i]+" ");
+        System.out.println("After sorting:");
+        Arrays.sort(arr);
+        for(i=0;i<6;++i)
+            System.out.print(arr[i]+" ");
+        System.out.println("Enter an array of 5");
+        Scanner in=new Scanner(System.in);
+        for (j = 0; j < 5; j++)
+            arr2[j]=in.nextInt();
+        for(i=0;i<5;++i)
+        {
+            for(j=i;j<5;++j)
+            {
+                if(arr2[j]<arr2[i])
+                {
+                    tmp=arr2[i];
+                    arr2[i]=arr2[j];
+                    arr2[j]=tmp;
+                }
+            }
+        }
+        System.out.println("The array is: ");
+        for(i=0;i<5;++i)
+            System.out.print(arr2[i]+" ");
+    }
+}
