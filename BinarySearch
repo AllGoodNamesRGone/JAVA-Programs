@@ -1,0 +1,29 @@
+/**
+ * Program to accept an int array of 10
+ * and produce the index of the search key entered
+ * if present in the array
+ * By the help of binarySearch method present in Arrays Class.
+ * Author: GeekString(Piyush Gaur).
+ */
+import java.util.*;
+/**
+ * BinarySearch
+ */
+public class BinarySearch {
+
+    public static void main(String[] args) {
+        int arr[]=new int[10];
+        int ind,key,i;
+        Scanner in=new Scanner(System.in);
+        System.out.println("Enter the 10 integers");
+        for(i=0;i<10;++i)
+            arr[i]=in.nextInt();
+        System.out.println("Enter the Search key");
+        key=in.nextInt();
+        ind=Arrays.binarySearch(arr, key);
+        if(ind>0)
+            System.out.println("The Search key is present at index: "+ind);
+        else
+            System.out.println("The Search key is not present in the array");
+    }
+}
