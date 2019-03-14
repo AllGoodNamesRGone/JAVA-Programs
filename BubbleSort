@@ -1,0 +1,30 @@
+/*Program to implement Bubble Sort using java*/
+class BubbleSort
+{ 
+    public static void main(String args[])
+    {
+        int[] arr={12,4,6,78,-26,9,-1};
+        int i,unSorted;
+        System.out.println("The Array is: ");
+        for(i=0;i<arr.length;++i)
+        System.out.print(arr[i]+" ");
+        for(unSorted=6;unSorted>0;unSorted--)
+        {
+            for(i=0;i<unSorted;i++)
+            {
+                if(arr[i]>arr[i+1])
+                    swap(arr,i,i+1);
+            }
+        }
+        System.out.println("\n\nThe Sorted Array is: ");
+        for(i=0;i<arr.length;i++)
+        System.out.print(arr[i]+" ");
+    }//eomain
+    public static void swap(int arr[], int i, int j)
+    {
+        int temp;
+        temp=arr[i];
+        arr[i]=arr[j];
+        arr[j]=temp;
+    }//eod
+}//end of class BubbleSort
