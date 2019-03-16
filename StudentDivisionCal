@@ -1,0 +1,56 @@
+import java.util.Scanner;
+class Main
+{
+	public static void main(String[] args)
+	{
+		Student obj=new Student();
+		obj.setMarks();
+		obj.getMarks();
+	}
+}
+class Student
+{
+	String name,div;
+	int i,flag=0,tot=0;	
+	int[] sub=new int[5];
+	float per=0.0f;
+	void setMarks()
+	{
+		Scanner in=new Scanner(System.in);
+		System.out.println("Enter the Name");
+		name=in.nextLine();
+		//System.out.println("");
+		System.out.println("Enter the Marks of 5 Subjects");
+		for(i=0;i<5;++i)
+		{
+			sub[i]=in.nextInt();
+			if(sub[i]<33)
+				flag=1;
+			tot+=sub[i];
+		}
+		per=(float)tot/5;
+		if(per>60&&flag!=1)
+			div="I";
+		else if(per<60&&per>45&&flag!=1)
+			div="II";
+		else if(per>33&&per<45&&flag!=1)
+			div="III";
+		else
+			div="FAIL";
+	}
+	void getMarks()
+	{
+		System.out.println("NAME: "+name);
+		System.out.println("================================");
+		System.out.println("SUBJECT    MARKS");
+		System.out.println("Physics    "+sub[0]);
+		System.out.println("Chemistry  "+sub[1]);
+		System.out.println("Maths      "+sub[2]);
+		System.out.println("CS         "+sub[3]);
+		System.out.println("English    "+sub[4]);
+		System.out.println("=================================");
+		System.out.println("Total: "+tot);
+		System.out.println("Percentage: "+per);
+		System.out.println("Division: "+div);
+	}
+}
