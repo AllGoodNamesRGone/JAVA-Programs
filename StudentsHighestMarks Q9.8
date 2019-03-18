@@ -1,0 +1,65 @@
+/**Question 9.8 From the E.Balagurusamy Book "Programming with Java"
+*the annual exam results of 100 students are tabulated.
+*wap to read the data &determine following:
+*1: total marks obtained by each student.
+*2: the highest marks in each subject and the roll no of student
+*3: student who obtained highest marks.
+*/
+import java.util.Scanner;
+class Main{
+	public static void main(String[] args) {
+		int i,hldobj1=0,hldobj2=0,maxsub=0,j;
+		float maxtot=0.0f;
+		Student obj[]=new Student[3];
+		for (i=0; i<3; ++i) {
+			obj[i]=new Student();
+		}
+		for (i=0; i<3; i++)//Set Table
+			obj[i].setAll();
+		System.out.println("Roll No.  Subject1  Subject2  Subject3  Total");
+		for (i=0; i<3; ++i){//Get Table
+			obj[i].getAll();	
+		}
+		for (i=0; i<3; ++i) 
+		{
+			for (j=0; j<3; ++j)
+			{
+				if(obj[j].sub[i]>maxsub)
+				{
+					maxsub=obj[j].sub[i];
+					hldobj1=j;
+				}
+			}
+			if(obj[i].tot>maxtot)
+			{
+				maxtot=obj[i].tot;
+				hldobj2=i;
+			}
+			System.out.println("MAX marks in Subject "+(i+1)+": "+obj[hldobj1].sub[i]+" Scored by: "+obj[hldobj1].rn);
+		}
+		System.out.println("Highest Total no. of Marks: "+obj[hldobj2].tot+" Scored by: "+obj[hldobj2].rn);
+	}//END OF MAIN
+}//END OF CLASS
+ class Student
+ {
+ 	int rn, i, sub[]=new int[3];
+ 	float tot=0.0f;
+ 	Scanner in=new Scanner(System.in);
+ 	void setAll(){
+ 		System.out.print("\nEnter Roll no.: ");
+ 		rn=in.nextInt();
+ 		for (i=0; i<3; ++i) {
+ 			System.out.println("Enter Marks of Sub "+(i+1));
+ 			sub[i]=in.nextInt();
+ 		}
+ 	}
+ 	void getAll(){
+ 		System.out.print("\t"+rn);
+ 		for (i=0; i<3; i++) {
+ 				System.out.print("\t"+sub[i]);
+ 				tot+=(float)sub[i];
+ 			}
+ 		System.out.print("\t"+tot+"\n");
+ 	}
+ 	//System.out.println();
+ }
