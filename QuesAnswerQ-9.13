@@ -1,0 +1,36 @@
+/**Q:9.13: Write a program to do the following:
+*(a) To output the question "Who is the inventor of C++"
+*(b) To accept the answer
+*(c) To print "Good" if Correct
+*(d) The output message "try Again", if wrog
+*(e) To display the Correct answer when wrong even at the 3rd try.
+*/
+import java.util.Scanner;
+class Main
+{
+	public static void main(String[] args) {
+		int cnt=3,i;
+		String ans=new String("Bajarne Strostrup");
+		String inp=new String();
+		Scanner in=new Scanner(System.in);
+		for (i=0; i<cnt; i++)	
+		{
+			System.out.println("Who is the inventor of C++?");
+			inp=in.nextLine();
+			if (ans.equalsIgnoreCase(inp)) {
+				System.out.println("Good!");
+				break;
+			}
+			else
+			{	
+				if (i==2) {
+					System.out.println("The Correct answer is: "+ans);
+					break;
+				}
+				else
+					System.out.println("Try Again!");
+			}
+		}
+		//System.out.println("");
+	}
+}
